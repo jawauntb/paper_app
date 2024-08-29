@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "paper",
-    "slug": "paper",
+    "name": "paper_app",
+    "slug": "paper_app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jawauntb.paper"
     },
     "android": {
       "adaptiveIcon": {
@@ -31,6 +32,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "2904d235-cfc8-4790-a70e-6d32ad0ea0ba"
+      }
     }
   }
 }
