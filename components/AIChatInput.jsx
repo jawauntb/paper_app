@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet, ActivityIndicator, Alert } from 'react-native';
+import { makeAPIRequest } from '../../services/aiApi.js'
 
 function AIChatInput() {
   const [typedText, setTypedText] = useState('');
   const [generatedContent, setGeneratedContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
+  
   async function handleSubmit() {
     setIsLoading(true);
 
@@ -20,29 +21,6 @@ function AIChatInput() {
 
     setGeneratedContent(rawContent);
     setIsLoading(false);
-  }
-
-  async function makeAPIRequest(payload) {
-    try {
-      const response = await fetch('https://emojipt-jawaunbrown.replit.app/sitesee', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ payload }),
-      });
-
-      const data = await response.json();
-      if (data && data.choices && data.choices.length > 0) {
-        return data.choices[0].message.content;
-      } else {
-        console.error('Unexpected API response:', data);
-        return '';
-      }
-    } catch (error) {
-      console.error('Error processing request:', error);
-      Alert.alert('Error', 'Failed to process request');
-    }
   }
 
   return (

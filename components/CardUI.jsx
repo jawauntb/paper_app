@@ -7,7 +7,7 @@ import HeaderSection from './HeaderSection';
 import QuoteCard from './QuoteCard';
 import LinkPreviewCard from './LinkPreviewCard';
 
-const CustomUI = ({ profileImage, cardTitle, previewData, randomQuote, urls, titles, showTV, gradient, previewLink }) => {
+const CardUI = ({ profileImage, cardTitle, previewData, randomQuote, urls, titles, showTV, gradient, previewLink }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Paper</Text>
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomUI;
+export default CardUI;

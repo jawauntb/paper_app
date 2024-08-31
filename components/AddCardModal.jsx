@@ -6,6 +6,7 @@ import TradingViewWidget from './TradingViewWidget';
 import LinkWithIframe from './LinkWithIframe';
 import QuoteCard from './QuoteCard';
 import LinkPreviewCard from './LinkPreviewCard';
+import { makeAPIRequest } from '../../services/aiApi.js'
 
 const AddCardModal = ({ visible, onClose, onCreate }) => {
   const [title, setTitle] = useState('');
@@ -17,6 +18,23 @@ const AddCardModal = ({ visible, onClose, onCreate }) => {
   const [media, setMedia] = useState([]);
   const [coverImage, setCoverImage] = useState(null);
   const [isPreviewLink, setIsPreviewLink] = useState(false);
+  const [apiResult, setApiResult] = useState('');
+
+  // async function handleSubmit() {
+  //   setIsLoading(true);
+
+  //   const textInput = `${typedText}`;
+  //   const rawContent = await makeAPIRequest({
+  //     model: "gpt-4o",
+  //     messages: [
+  //       { role: "system", content: "You are a helpful AI" },
+  //       { role: "user", content: textInput }
+  //     ]
+  //   });
+
+  //   setGeneratedContent(rawContent);
+  //   setIsLoading(false);
+  // }
 
   const handleAddLink = () => {
     setLinks([...links, { url, customTitle: '', preview: isPreviewLink }]);

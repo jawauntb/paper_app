@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
-import CustomUI from '../../components/CustomUI';
+import CardUI from '../../components/CardUI';
 import AddCardModal from '../../components/AddCardModal';
 
 const Index = () => {
@@ -64,7 +64,7 @@ const Index = () => {
         cardIndex={currentIndex}
         renderCard={(card) => (
           <ScrollView contentContainerStyle={styles.scrollContainer}>
-            <CustomUI
+            <CardUI
               profileImage={require('../../assets/images/cardlogo.jpg')}
               cardTitle={card.title || "Things You Might Like"}
               previewData={previewData}
@@ -102,3 +102,4 @@ const styles = StyleSheet.create({
 });
 
 export default Index;
+
